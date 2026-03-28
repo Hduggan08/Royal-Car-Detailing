@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Royal Car Detailing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .logo {
+      font-size: 2.8em;
+      font-weight: bold;
+      color: gold;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: black;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c5364;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .service {
+      flex: 1 1 250px;
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      background: gold;
+      color: black;
+      transform: translateY(-5px);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      background: gold;
+      border: none;
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #e6c200;
+    }
+
+    .contact-info {
+      margin-top: 15px;
+      font-size: 0.95em;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">👑 Royal <span>Car Detailing</span></div>
+  <p>Premium Care for Your Vehicle</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Packages</a>
+  <a href="#booking">Book Now</a>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Royal Car Detailing provides professional automotive cleaning and restoration services designed to keep vehicles looking their best inside and out. We specialize in meticulous interior detailing, exterior polishing, and protective treatments using high-quality products and proven techniques. Our goal is to deliver exceptional results and customer satisfaction.
+  </p>
+</section>
+
+<section id="services">
+  <h2>Our Packages</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Interior Detail</h3>
+      <p>Deep cleaning of seats, carpets, dashboard, and interior surfaces.</p>
+    </div>
+    <div class="service">
+      <h3>Interior & Exterior</h3>
+      <p>Full interior clean plus exterior wash, wax, and shine.</p>
+    </div>
+    <div class="service">
+      <h3>Full Detail</h3>
+      <p>Complete premium service for a full showroom-quality finish.</p>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <h2>Book an Appointment</h2>
+  <form onsubmit="sendBooking(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+    
+    <select id="package" required>
+      <option value="">Select Package</option>
+      <option>Interior Detail</option>
+      <option>Interior & Exterior</option>
+      <option>Full Detail</option>
+    </select>
+
+    <input type="date" id="date" required>
+    <textarea id="notes" placeholder="Additional details..."></textarea>
+
+    <button type="submit">Book Now</button>
+  </form>
+
+  <div class="contact-info">
+    <p>📞 587-223-1244</p>
+    <p>📧 holdenduggan@yahoo.com</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Royal Car Detailing. All rights reserved.</p>
+</footer>
+
+<script>
+function sendBooking(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const pkg = document.getElementById('package').value;
+  const date = document.getElementById('date').value;
+  const notes = document.getElementById('notes').value;
+
+  const subject = "Car Detailing Booking Request";
+  const body = `Name: ${name}%0D%0APhone: ${phone}%0D%0APackage: ${pkg}%0D%0ADate: ${date}%0D%0ANotes: ${notes}`;
+
+  window.location.href = `mailto:holdenduggan@yahoo.com?subject=${subject}&body=${body}`;
+}
+</script>
+
+</body>
+</html>
